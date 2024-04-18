@@ -1,4 +1,3 @@
 pyTelegramBotAPI
 flask
 selenium
-sqlite3
