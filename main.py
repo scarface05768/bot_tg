@@ -12,7 +12,7 @@ from selenium.webdriver.support.ui import WebDriverWait
 from selenium.webdriver.support import expected_conditions as EC
 from flask import Flask, request
 
-BOT_TOKEN = "YOUR_BOT_TOKEN"
+BOT_TOKEN = "7023913254:AAEh2GutePfEFXhea9zRX10uPMfdfLYshoQ"
 
 # Создаем объект бота
 bot = telebot.TeleBot(BOT_TOKEN)
