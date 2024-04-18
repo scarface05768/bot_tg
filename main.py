@@ -81,11 +81,12 @@ if __name__ == "__main__":
     bot.set_webhook(url="https://my-heroku-a14c673fb233.herokuapp.com/")
     server.run(host="0.0.0.0", port=int(os.environ.get("PORT", 5000)))
 
-@app.route('/', methods=['POST'])
-def handle_post():
-    data = request.get_json()
-    # Обработка данных
-    return 'OK', 200
+@server.route('/' + BOT_TOKEN, methods=['POST'])
+def get_message():
+    json_string = request.get_data().decode('utf-8')
+    update = telebot.types.Update.de_json(json_string)
+    bot.process_new_updates([update])
+    return '!', 200
 
 @bot.message_handler(commands=['start'])
 def send_welcome(message):
